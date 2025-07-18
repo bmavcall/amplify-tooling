@@ -64,8 +64,6 @@ jobs:
         nodeVersion: ["20.18.2", "22.13.1"]
         os: [ubuntu-latest]
     steps:
-      - name: check
-        run: npm ls got
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
@@ -74,5 +72,7 @@ jobs:
         run: sudo apt-get install -y libsecret-1-0
       - name: Install dependencies
         run: yarn
+      - name: got version check
+        run: npm ls got
       - name: Run tests
         run: yarn run test
