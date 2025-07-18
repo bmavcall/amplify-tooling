@@ -64,6 +64,8 @@ jobs:
         nodeVersion: ["20.18.2", "22.13.1"]
         os: [ubuntu-latest]
     steps:
+      - name: check
+        run: npm ls got
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
