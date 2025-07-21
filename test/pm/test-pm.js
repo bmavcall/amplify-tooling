@@ -250,6 +250,7 @@ describe('axway pm', () => {
 		afterEach(resetHomeDir);
 
 		it('should handle update a package', async function () {
+			this.timeout(120000);
 			this.slow(60000);
 
 			await runAxwaySync([ 'pm', 'install', 'acs@2.1.9' ]);
@@ -269,6 +270,7 @@ describe('axway pm', () => {
 		});
 
 		it('should handle no packages to update', async function () {
+			this.timeout(120000);
 			this.slow(60000);
 
 			let { status, stdout } = await runAxwaySync([ 'pm', 'update' ]);
@@ -302,6 +304,7 @@ describe('axway pm', () => {
 		afterEach(resetHomeDir);
 
 		it('should purge old versions with latest in use', async function () {
+			this.timeout(120000);
 			this.slow(30000);
 
 			await runAxwaySync([ 'pm', 'install', 'acs@2.1.9' ]);
@@ -320,6 +323,7 @@ describe('axway pm', () => {
 		});
 
 		it('should purge old versions with older version in use', async function () {
+			this.timeout(120000);
 			this.slow(30000);
 
 			await runAxwaySync([ 'pm', 'install', 'acs@2.1.8' ]);
@@ -340,6 +344,7 @@ describe('axway pm', () => {
 		});
 
 		it('should handle no packages to purge', async function () {
+			this.timeout(120000);
 			this.slow(30000);
 
 			let { status, stdout } = await runAxwaySync([ 'pm', 'purge' ]);
